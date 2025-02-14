@@ -54,7 +54,7 @@ const EditUserDetails = ({onClose,user}) => {
         e.stopPropagation()
 
         try{
-            const URL = `${process.env.REACT_APP_BACKEND_URL}/api/update-user-details`
+            const URL = `${process.env.REACT_APP_BACKEND_URL}/update-user-details`
             const response = await axios.post(URL,data)
             
             toast.success(response?.data?.message)

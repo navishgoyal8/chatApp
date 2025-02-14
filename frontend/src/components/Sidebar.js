@@ -58,7 +58,7 @@ const Sidebar = () => {
     },[socketConnection,user])
 
     const handleLogout = () => {
-        const URL = `${process.env.REACT_APP_BACKEND_URL}/api/logout`
+        const URL = `${process.env.REACT_APP_BACKEND_URL}/logout`
         dispatch(logout())
         axios.get(URL)
         navigate('/email')

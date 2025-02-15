@@ -38,12 +38,12 @@ const EditUserDetails = ({onClose,user}) => {
         const file = e.target.files[0]
 
         const uploadPhoto = await uploadFile(file)
-        console.log("uploadPhoto",uploadPhoto?.url)
+        console.log("uploadPhoto",uploadPhoto?.secure_url)
   
         setData((preve) => {
             return {
                 ...preve,
-                profile_pic: uploadPhoto?.url
+                profile_pic: uploadPhoto?.secure_url
             }
         })
   

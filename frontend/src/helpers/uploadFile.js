@@ -11,7 +11,11 @@ const uploadFile = async (file) => {
     })
     const responseData = await response.json()
     
-    return responseData
+    if (responseData.secure_url) {
+        return responseData.secure_url;  // Use HTTPS URL
+    } else {
+        return responseData.url.replace("http://", "https://");  // Fallback fix
+    }
 }
 
 export default uploadFile

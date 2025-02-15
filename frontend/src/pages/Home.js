@@ -15,7 +15,7 @@ const Home = () => {
   const location = useLocation()
   // console.log("user",user)
 
-  
+
 
   const fetchUserDetails = async() => {
     const URL = `${process.env.REACT_APP_BACKEND_URL}/api/user-details`
@@ -40,6 +40,8 @@ const Home = () => {
   /*** socket connection  ***/
   useEffect(() => {
     const socketConnection = io(process.env.BACKEND_URL,{
+      transports: ["websocket", "polling"], // Ensure polling is enabled
+    withCredentials: true,
       auth: {
         token: localStorage.getItem('token')
       }

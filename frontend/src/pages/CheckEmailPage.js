@@ -26,7 +26,7 @@ const handleSubmit = async(e) => {
   e.preventDefault()
   e.stopPropagation()
   
-  const URL = `${process.env.REACT_APP_BACKEND_URL}/email`
+  const URL = `${process.env.REACT_APP_BACKEND_URL}/api/email`
   
   try{
     const response = await axios.post(URL,data)

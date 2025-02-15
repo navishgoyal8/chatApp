@@ -16,10 +16,7 @@ const io = new Server(server, {
     },
 });
 
-/*** 
- *
- Socket running at http://localhost:8080/ 
- * ******/
+
 
 // online user
 const onlineUser = new Set()

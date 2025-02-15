@@ -13,7 +13,7 @@ const SearchUser = ({onClose}) => {
   const [search,setSearch] = useState("")
 
   const handleUserSearch = async (e) => {
-    const URL = `${process.env.REACT_APP_BACKEND_URL}/search-user`
+    const URL = `${process.env.REACT_APP_BACKEND_URL}/api/search-user`
     try{  
         setLoading(true)
         const response = await axios.post(URL,{

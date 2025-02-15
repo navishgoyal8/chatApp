@@ -22,8 +22,10 @@ const checkPassword = async(req,res) => {
         const token = await jwt.sign(tokenData, process.env.JWT_SECRET_KEY, {expiresIn: '1d'})
 
         const cookieOptions = {
-            http: true,
-            secure: true
+            httpOnly: true,  // Prevents client-side JavaScript access
+            secure: process.env.NODE_ENV === 'production',  // Only secure in production
+            sameSite: 'None',  // Important for cross-origin cookies
+            domain: '.onrender.com',  // Adjust based on your frontend & backend domains
         }
     
     return res.cookie('token',token,cookieOptions).status(200).json({

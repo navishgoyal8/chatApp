@@ -8,7 +8,10 @@ const router = require('./routes/index');
 const {app,server} = require('./socket/index');
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: 'https://chatapp-frontend-95ic.onrender.com/',
+    credentials: true
+}));
 app.use(cookieParser());
 app.use('/api',router);
 

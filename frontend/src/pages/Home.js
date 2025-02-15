@@ -15,6 +15,8 @@ const Home = () => {
   const location = useLocation()
   // console.log("user",user)
 
+  
+
   const fetchUserDetails = async() => {
     const URL = `${process.env.REACT_APP_BACKEND_URL}/api/user-details`
     try{

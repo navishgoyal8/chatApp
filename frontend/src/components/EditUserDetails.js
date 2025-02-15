@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Avatar from './Avatar'
-// import uploadFile from '../helpers/uploadFile'
+import uploadFile from '../helpers/uploadFile'
 import Divider from './Divider'
 import axios from 'axios'
 import toast from 'react-hot-toast'
@@ -37,13 +37,13 @@ const EditUserDetails = ({onClose,user}) => {
     const handleUploadPhoto = async(e) => {
         const file = e.target.files[0]
 
-        // const uploadPhoto = await uploadFile(file)
-        // console.log("uploadPhoto",uploadPhoto)
+        const uploadPhoto = await uploadFile(file)
+        console.log("uploadPhoto",uploadPhoto)
   
         setData((preve) => {
             return {
                 ...preve,
-                // profile_pic: uploadPhoto
+                profile_pic: uploadPhoto
             }
         })
   

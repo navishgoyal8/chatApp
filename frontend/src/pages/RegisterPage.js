@@ -30,12 +30,12 @@ const handleOnChange = (e) => {
 const handleUploadPhoto = async(e) => {
   const file = e.target.files[0]
 
-  // const uploadPhoto = await uploadFile(file)
-  // setUploadPhoto(file)
+  const uploadPhoto = await uploadFile(file)
+  setUploadPhoto(file)
   setData((preve) => {
     return {
       ...preve,
-      // profile_pic: uploadPhoto?.url
+      profile_pic: uploadPhoto?.url
     }
   })
   

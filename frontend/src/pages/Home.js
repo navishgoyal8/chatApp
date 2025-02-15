@@ -37,7 +37,7 @@ const Home = () => {
 
   /*** socket connection  ***/
   useEffect(() => {
-    const socketConnection = io('http://localhost:8080',{
+    const socketConnection = io(process.env.BACKEND_URL,{
       auth: {
         token: localStorage.getItem('token')
       }

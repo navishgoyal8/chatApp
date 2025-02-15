@@ -9,7 +9,7 @@ const {app,server} = require('./socket/index');
 
 app.use(express.json());
 app.use(cors({
-    origin: 'https://chatapp-frontend-95ic.onrender.com/',
+    origin: '*',
     credentials: true
 }));
 app.use(cookieParser());

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {IoClose} from 'react-icons/io5'
 import { Link, useNavigate } from 'react-router-dom'
-import uploadFile from '../helpers/uploadFile'
+// import uploadFile from '../helpers/uploadFile'
 import axios from 'axios'
 import toast from 'react-hot-toast'
 
@@ -30,12 +30,12 @@ const handleOnChange = (e) => {
 const handleUploadPhoto = async(e) => {
   const file = e.target.files[0]
 
-  const uploadPhoto = await uploadFile(file)
-  setUploadPhoto(file)
+  // const uploadPhoto = await uploadFile(file)
+  // setUploadPhoto(file)
   setData((preve) => {
     return {
       ...preve,
-      profile_pic: uploadPhoto?.url
+      // profile_pic: uploadPhoto?.url
     }
   })
   
